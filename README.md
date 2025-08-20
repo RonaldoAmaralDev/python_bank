@@ -82,7 +82,7 @@ python main.py
 👉 Escolha: 1
 👤 Nome: Ronaldo Amaral
 🆔 CPF: 123.456.756-00
-🏠 Endereço: Rua Grao Mogol 360
+🏠 Endereço: Rua Teste
 📞 Telefone: (31) 91231-4569
 ✅ Conta criada com sucesso! ID: 1
 👉 A - Acessar conta | B - Voltar: A
@@ -160,14 +160,14 @@ sudo update-locale
 
 ## Backlog
 
-🔤 Padronização dos nomes em inglês para melhor clareza do código
-🏦 Acesso por número da agência e conta (sem IDs internos)
-🔒 Senha ao criar conta para maior segurança
-✅ Validador de CPF integrado no cadastro
-📍 Buscador de endereço por CEP para preencher dados automaticamente
-🖨️ Opção de imprimir extrato diretamente no terminal
-🎨 Interface gráfica para facilitar o uso
-📜 Histórico completo de transações
+- Padronização dos nomes em inglês para melhor clareza do código
+- Acesso por número da agência e conta (sem IDs internos)
+- Senha ao criar conta para maior segurança
+- Validador de CPF integrado no cadastro
+- Buscador de endereço por CEP para preencher dados automaticamente
+- Opção de imprimir extrato diretamente no terminal
+- Interface gráfica para facilitar o uso
+- Histórico completo de transações
 📄 Relatórios em PDF
 💾 Integração com SQLite para persistência de dados
 
