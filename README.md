@@ -15,7 +15,7 @@ Sistema bancário em terminal com funcionalidades completas:
 ## Estrutura do projeto
 
 ```
-flask_sqlite_crud/
+python_bank/
 ├── main.py               # Arquivo principal que inicia o sistema
 ├── menu.py               # Menu principal e menu do cliente
 ├── database.py           # Inicialização e conexão SQLite
@@ -41,7 +41,7 @@ flask_sqlite_crud/
 1. Navegue até o diretório do projeto:
 
 ```bash
-cd ~/projetos/flask_sqlite_crud
+cd ~/projetos/python_bank
 ```
 
 2. Criar e ativar o ambiente virtual:
