@@ -168,7 +168,7 @@ sudo update-locale
 - Opção de imprimir extrato diretamente no terminal
 - Interface gráfica para facilitar o uso
 - Histórico completo de transações
-📄 Relatórios em PDF
-💾 Integração com SQLite para persistência de dados
+- Relatórios em PDF
+- Integração com SQLite para persistência de dados
 
 
