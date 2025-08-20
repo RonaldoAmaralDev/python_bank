@@ -7,7 +7,7 @@ def menu_cliente(cliente_id):
     while True:
         limpar_tela()
         saldo = carregar_saldo(cliente_id)
-        print("🟦 XPTO BANK - Conta Corrente")
+        print("🟦 BANK - Conta Corrente")
         print(f"👤 Cliente: {cliente['nome']}")
         print(f"🆔 Conta:   {cliente['id']}")
         print(f"💰 Saldo:   {formatar_dinheiro(saldo)}")
@@ -48,7 +48,7 @@ def menu_cliente(cliente_id):
 def menu_principal():
     while True:
         limpar_tela()
-        print("🟦 XPTO BANK - Sistema Bancário")
+        print("🟦 BANK - Sistema Bancário")
         print("1 - Criar nova conta\n2 - Acessar conta\n3 - Sair")
         opcao = input("👉 Escolha: ").strip()
 

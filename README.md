@@ -1,4 +1,4 @@
-# 🟦 XPTO BANK - Sistema Bancário em Python
+# 🟦 BANK - Sistema Bancário em Python
 
 Sistema bancário em terminal com funcionalidades completas:
 
@@ -75,7 +75,7 @@ python main.py
 ### Exemplo de execução
 
 ```
-🟦 XPTO BANK - Sistema Bancário
+🟦 BANK - Sistema Bancário
 1 - Criar nova conta
 2 - Acessar conta
 3 - Sair
@@ -87,7 +87,7 @@ python main.py
 ✅ Conta criada com sucesso! ID: 1
 👉 A - Acessar conta | B - Voltar: A
 
-🟦 XPTO BANK - Conta Corrente
+🟦 BANK - Conta Corrente
 👤 Cliente: Ronaldo Amaral
 🆔 Conta:   1
 💰 Saldo:   R$ 0,00
