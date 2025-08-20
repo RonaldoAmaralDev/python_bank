@@ -158,3 +158,17 @@ sudo update-locale
 - Sair do Python: `Ctrl+D`
 - Recriar banco: deletar `bank.db` e rodar `python main.py`
 
+## Backlog
+
+🔤 Padronização dos nomes em inglês para melhor clareza do código
+🏦 Acesso por número da agência e conta (sem IDs internos)
+🔒 Senha ao criar conta para maior segurança
+✅ Validador de CPF integrado no cadastro
+📍 Buscador de endereço por CEP para preencher dados automaticamente
+🖨️ Opção de imprimir extrato diretamente no terminal
+🎨 Interface gráfica para facilitar o uso
+📜 Histórico completo de transações
+📄 Relatórios em PDF
+💾 Integração com SQLite para persistência de dados
+
+
