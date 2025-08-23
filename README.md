@@ -1,160 +1,79 @@
-# 🟦 BANK - Sistema Bancário em Python
+# 🏦 Python Bank
 
-Sistema bancário em terminal com funcionalidades completas:
+Um projeto simples de **banco digital em Python** para estudos, simulação e prática de programação orientada a objetos.  
 
-- Criação de contas de clientes
-- Depósitos e saques
-- Consulta de saldo
-- Extrato detalhado
-- Máscara de CPF enquanto digita
-- Máscara de telefone (residencial ou celular) enquanto digita
-- Banco de dados SQLite integrado
+O objetivo é simular operações bancárias como criação de contas, depósitos, saques e transferências, utilizando boas práticas de código e estrutura clara.
 
 ---
 
-## Estrutura do projeto
+## ✨ Novidades desta versão
 
-```
+- 🔤 **Padronização dos nomes em inglês** para melhor clareza do código  
+- 🏦 **Acesso por número da agência e conta** (sem IDs internos)  
+- 🔒 **Senha ao criar conta** para maior segurança  
+- ✅ **Validador de CPF integrado** no cadastro  
+
+---
+
+## 🚀 Funcionalidades
+
+- Criar conta com **nome, CPF, agência, conta e senha**  
+- Listar contas cadastradas  
+- Depositar valores  
+- Sacar valores com senha de autenticação  
+- Transferir entre contas existentes  
+- Validar CPF antes de criar uma nova conta  
+
+---
+
+## 📂 Estrutura do Projeto
+
 python_bank/
-├── main.py               # Arquivo principal que inicia o sistema
-├── menu.py               # Menu principal e menu do cliente
-├── database.py           # Inicialização e conexão SQLite
-├── movimentacoes.py      # Funções de movimentação e extrato
-├── clientes.py           # Funções de criação e busca de clientes
-├── utils.py              # Funções auxiliares (limpar tela, pausa, formatar dinheiro, input CPF, input telefone)
-├── schema.sql            # Script SQL para criar tabelas
-└── .venv/                # Ambiente virtual Python
-```
+├── bank.py # Classe principal do banco
+├── account.py # Classe que representa a conta bancária
+├── cpf_validator.py # Função para validação de CPF
+├── main.py # Ponto de entrada do programa
+└── README.md # Documentação do projeto
 
----
+## 🛠️ Como executar o projeto
 
-## Pré-requisitos
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/RonaldoAmaralDev/python_bank.git
+Entre na pasta do projeto:
 
-- Python 3.10 ou superior
-- WSL (Windows Subsystem for Linux) ou Linux
-- SQLite3
+cd python_bank
+Execute o programa:
 
----
-
-## Configuração no WSL
-
-1. Navegue até o diretório do projeto:
-
-```bash
-cd ~/projetos/python_bank
-```
-
-2. Criar e ativar o ambiente virtual:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-3. Instalar dependências (se houver `requirements.txt`):
-
-```bash
-pip install -r requirements.txt
-```
-
-4. Inicializar banco de dados
-
-O banco SQLite (`bank.db`) será criado automaticamente na primeira execução, com as tabelas:
-
-- `clientes`
-- `movimentacoes`
-
----
-
-## Executando o sistema
-
-```bash
 python main.py
-```
+🧪 Exemplo de Uso
+Ao rodar o programa, você poderá:
 
-### Exemplo de execução
+===== Python Bank =====
+1 - Criar conta
+2 - Listar contas
+3 - Depositar
+4 - Sacar
+5 - Transferir
+0 - Sair
 
-```
-🟦 BANK - Sistema Bancário
-1 - Criar nova conta
-2 - Acessar conta
-3 - Sair
-👉 Escolha: 1
-👤 Nome: Ronaldo Amaral
-🆔 CPF: 123.456.756-00
-🏠 Endereço: Rua Grao Mogol 360
-📞 Telefone: (31) 91231-4569
-✅ Conta criada com sucesso! ID: 1
-👉 A - Acessar conta | B - Voltar: A
+✅ Criar conta → informa nome, CPF válido e senha
+✅ Depositar → adiciona saldo
+✅ Sacar → exige senha correta
+✅ Transferir → de uma conta para outra
 
-🟦 BANK - Conta Corrente
-👤 Cliente: Ronaldo Amaral
-🆔 Conta:   1
-💰 Saldo:   R$ 0,00
+📌 Próximos Passos
+📊 Relatórios de movimentações da conta
 
-[A] Depositar
-[B] Sacar
-[C] Extrato
-[D] Sair
-👉 Escolha:
-```
+💾 Persistência dos dados (SQLite ou JSON)
 
-- **Depósito**: permite adicionar valor à conta
-- **Saque**: retira valor se houver saldo suficiente
-- **Extrato**: lista todas as movimentações
+🌐 Criar versão com interface web (Flask/Django ou FastAPI)
 
----
+🧑‍💻 Implementar testes unitários
 
-## Máscara de CPF
+🤝 Contribuições
+Sinta-se à vontade para abrir issues ou enviar pull requests com melhorias.
+Sugestões são sempre bem-vindas! 🚀
 
-- O CPF será exibido no formato `000.000.000-00` enquanto o usuário digita.
-- O valor armazenado no banco é apenas os números (`12345675600`).
-
-## Máscara de Telefone
-
-- Telefones residenciais: `(XX) XXXX-XXXX`
-- Telefones celulares: `(XX) 9XXXX-XXXX`
-- Retorna apenas números para armazenamento.
-
----
-
-## Formatando valores monetários
-
-- O saldo e extrato usam `locale` para formatar em reais.
-- Se ocorrer erro de locale no WSL:
-
-```bash
-sudo apt update
-sudo apt install language-pack-pt
-sudo locale-gen pt_BR.UTF-8
-sudo update-locale
-```
-
-- Fallback: caso a locale não funcione, o formato será `R$ 1.234,56`.
-
----
-
-## Testando o sistema
-
-1. Criar 2 contas
-2. Fazer depósitos e saques
-3. Consultar saldo e extrato
-4. Tentar sacar valor maior que o saldo (deve exibir erro)
-5. Acessar contas por ID
-
----
-
-## Observações
-
-- Sistema modular: fácil de estender
-- Banco de dados SQLite local (`bank.db`)
-- Indicado rodar em terminal Linux ou WSL
-
----
-
-## Comandos úteis
-
-- Limpar tela (WSL/Linux): `Ctrl+L`
-- Sair do Python: `Ctrl+D`
-- Recriar banco: deletar `bank.db` e rodar `python main.py`
-
+📄 Licença
+Este projeto está sob a licença MIT.
